@@ -1,0 +1,152 @@
+body{
+    background-color:rgb(239, 243, 245);
+}
+
+
+.index_btn_add{
+    margin:auto !important;
+    height:60%;
+    line-height: 100%;
+    text-align: center;
+}
+
+.mynavbar{
+    /* background-color: rgb(61, 129, 61); */
+    height:50px;
+    margin:0;
+}
+.mynav-show-item{
+    margin-right: 5px;
+    margin-left: 5px;
+    width:50px;
+    text-align: center;
+}
+.mynav-hide{
+    /* background-color: white; */
+    width: 100%;
+}
+.mynav-hide-item{
+    margin-right: 5px;
+    margin-left: 5px;
+    text-align: center;
+    color: rgb(255, 255, 255) !important;
+}
+#navbarSupportedContent .mynav-btn{
+    width:100px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+
+/*----------------------左侧数据面板------------------------*/
+#main_pane{
+    background-color: rgb(255, 255, 255);
+}
+
+#left_data_pane{
+    height:460px;
+    background-color: rgb(216, 221, 217);
+}
+
+#index_nav{
+    background-color: rgb(216, 221, 217);
+    height:50px;
+}
+
+#project_pane{
+    background-color: rgb(216, 221, 217);
+    /* height:500px; */
+}
+#project_pane .row{
+    margin-left:0px;
+    margin-right:0px;
+}
+#project_pane .row .card{
+    padding-left:5px;
+    padding-right:5px;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+/* 卡牌 */
+#project_pane>.row>.myprojcard{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#project_pane>.row>.myprojcard>.card>.row:last-child{
+    text-align: center;
+}
+
+#project_pane>.row>.myprojcard>.card>.row>.project_img_icon{
+    max-width: 60px;
+    max-height: 60px;
+}
+
+#project_pane>.row>.myprojcard>.card>.row>.project_img_icon+div>.project_name {
+    line-height: 60px;
+    text-align: left;
+    margin-left: 10px;
+}
+
+#project_pane>.row>.myprojcard>.card>.row> .more_img_div{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+
+#project_pane>.row>.myprojcard>.card>.row .mydeletebtn{
+    position: relative;
+    right:0px;
+    top:0px;
+    margin:5px;
+    width:20px;
+    height:20px;
+    max-width: 30px;
+    padding: 0;
+    border-radius: 30%;
+    background-color: rgb(235, 235, 230);
+}
+#project_pane>.row>.myprojcard>.card>.row .delete_img_btn{
+    position: relative;
+    right:0px;
+    top:-5px;
+    max-width: 20px;
+    max-height: 20px;
+    margin:auto;
+
+    /* transform:rotate(90deg); */
+
+}
+
+
+.card>.row>.card_data_ele{
+    border-right: 1px solid #eeeaea;
+    box-sizing: border-box;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding:5px;
+    text-align: center;
+}
+
+.container>.row>.myprojcard>.card>.row>.card_data_ele:last-child{
+    border: none;
+}
+
+#project_pane>.row>.myprojcard>.card>.row>.card_data_ele>.card_data_ele_top>{
+    font-size:12px !important;
+    color: rgb(95, 94, 93);
+}
+
+.container>.row>.myprojcard>.card>.row>.card_data_ele>.card_data_ele_bottom{
+    font-size:8px !important;
+    color: rgb(165, 163, 161);
+}
+
+
+.container>.row>.myprojcard>.card>.row>.myedit_project_btn{
+    padding:5px;
+    margin:10px;
+}

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!--使用X-UA-Compatible来设置IE浏览器兼容模式 最新的渲染模式-->	
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--
+    viewport表示用户是否可以缩放页面；
+    width指定视区的逻辑宽度；
+    device-width指示视区宽度应为设备的屏幕宽度；
+    initial-scale指令用于设置Web页面的初始缩放比例
+    initial-scale=1则将显示未经缩放的Web文档
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap的HTML标准模板</title>   
+    <!-- 载入Bootstrap 的css -->
+    <link href="/static/Bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/static/css/index.css" rel="stylesheet" type="text/css">
+    <!-- 如果要使用Bootstrap的js插件，必须先调入jQuery -->
+  	
+    <link rel="shortcut icon" href="/static/images/svg/time.svg" type="image/x-icon">
+    <title>首页</title>
+</head>
+<input id="uid" hidden="True" value= "{{ uid }}">
+<script src="/static/js/jquery-3.5.1.min.js"></script>
+  <!-- 包括所有bootstrap的js插件或者可以根据需要使用的js插件调用　-->
+<script src="/static/Bootstrap/js/bootstrap.bundle.min.js"></script> 
+<!-- <script src="/static/Bootstrap/js/bootstrap.min.js" ></script>  -->
+
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark mynavbar " id="myNavBar">
+      <a class="navbar-brand d-flex justify-content-start text-light" href="#">
+        <img src="/static/images/svg/time.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+        时间阁
+      </a>
+      <ul class="navbar-nav mr-auto flex-row">
+        <li class="nav-item">
+          <a class="nav-link active text-light mynav-show-item d-inline-block" href="#">工作台</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light mynav-show-item d-inline-block" href="#">博客</a>
+        </li>
+      </ul>
+  
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <!-- mynav-hide -->
+      <div class="collapse navbar-collapse bg-dark" id="navbarSupportedContent">
+        <!-- 导航栏列表 -->
+        <ul class="navbar-nav ml-auto d-flex justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link mynav-hide-item" href="#">设置</a>
+          </li>
+          <!-- 下拉项 -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle mynav-hide-item" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              我的
+            </a>
+            <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item mynav-hide-item" href="#">个人详情</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item mynav-hide-item" href="#">我的好友</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item mynav-hide-item" href="#">Something else here</a>
+              <div class="dropdown-divider"></div>
+            </div>
+          </li>
+          <li class="nav-item d-flex justify-content-between">
+            <button class="btn btn-danger my-2 my-sm-0 text-light mynav-btn" style="width:100%;"> 登  录</button>
+          </li>
+          <li class="nav-item d-flex justify-content-between">
+            <button class="btn btn-primary my-2 my-sm-0 text-light" style="width:100%;" > 注  册</button>
+          </li>
+          
+        </ul>
+      </div>
+    </nav>
+
+
+    <div class="container-fluid col-12 col-md-10 d-flex flex-row justify-content-between" id="main_pane" style="margin-top: 50px;">
+      <!-- 左侧数据面板(小于”大屏“时隐藏) -->
+      <div class="container-fluid col-lg-4 d-none d-lg-block mt-2" id="left_data_pane" style="padding:15px;">
+          <div class="card">
+              <div id="calender" style="width:300px;height:360px;">
+              </div>
+
+          </div>
+      </div>
+
+      <!-- 右侧项目面板 -->
+      <div class="container-fluid col-lg-8 mt-2" >
+        <!-- 小屏幕的导航栏 -->
+        <div class="col-md-12 d-flex flex-column align-items-center" id="">
+            <button data-toggle="modal" data-target="#myModalDataShow" type="button" class="btn btn-primary p-2" style="width:100%;margin:auto;">查 看 打 卡</button>
+                
+           <!-- 查看日历 模态框 -->
+           <div class="modal fade" id="myModalDataShow">
+            <div class="modal-dialog">
+                <div class="modal-content">
+            
+                <!-- 模态框头部 -->
+                <div class="modal-header">
+                    <h4 class="modal-title">本月计时日历</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+            
+                <!-- 模态框主体 -->
+                <div class="modal-body">
+                  <div class="card">
+                    <div id="calender2" style="width:360px;height:360px;">
+                    </div>
+      
+                  </div>
+                </div>
+            
+                <!-- 模态框底部 -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary addsub_confirm_btn" data-dismiss="modal">确认</button>
+                </div>
+            
+                </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- 新建项目 -->
+        <div class="row col-md-10" style="margin:auto;height: 60px;">
+            <button type="button" class="btn btn-primary col-md-4 index_btn_add font-weight-normal"  data-toggle="modal" data-target="#myModal" >
+            新 建 项 目
+            </button>
+        </div>
+
+        <!-- 添加项目 模态框 -->
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+            
+                <!-- 模态框头部 -->
+                <div class="modal-header">
+                    <h4 class="modal-title">新建项目</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+            
+                <!-- 模态框主体 -->
+                <div class="modal-body">
+                  <input hidden="True" id="addp_uid" name="addp_uid" value="{{ uid }}">
+                  <input name="spname" id="addp_pname" type="text" placeholder="项目名字" style="border-color: rgb(61, 63, 90);">
+                  {% if add_project_flag == 0%}
+                  <p>已有同名项目，请重新输入！</p>
+                  {% endif %}
+                </div>
+            
+                <!-- 模态框底部 -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary addp_confirm_btn"  data-dismiss="modal">确认</button>
+                </div>
+            
+                </div>
+            </div>
+        </div>
+
+        <div class="container mr-2 pt-2 pl-2 pr-2" id="project_pane">
+          <!-- 横向框组合 --> 
+          <div class="row d-flex align-items-stretch"> 
+            
+            {% for row in project_list %}
+            <div class=" col-md-4 col-sm-12 myprojcard" style="max-width: 540px;">
+              <div class="card d-flex flex-column shadow-sm mb-5 bg-white rounded" >
+                
+                <!-- row1 -->
+                <div class="row no-gutters d-flex flex-row justify-content-between">
+                  <div class="col-md-4 col-4 project_img_icon">
+                    <img src="/static/images/svg/time_pyramid.svg " class="card-img" alt="...">
+                  </div>
+                  <div class="col-md-6 col-6 mr-auto">
+                    <div class="project_name text-truncate">{{ row.pname }}</div>
+                    
+                  </div>
+                  <div class="col-md-2 col-2 more_img_div">
+                    <input hidden="True" class="pid" value="{{row.pid}} ">
+                    <div class="mydeletebtn">
+                      <img src="/static/images/svg/delete.svg" class="delete_img_btn ml-auto" alt="..." >
+                    </div>
+                  </div>
+                </div>
+                <!-- row2 -->
+                <div class="row no-gutters ">
+                  <div class="col-md-4 col-4 card_data_ele">
+                    <div class="card_data_ele_top"> {{ row.ptime }}</div>
+                    <div class="card_data_ele_bottom" id='fuck'>总小时数</div>
+                  </div>
+                  <div class="col-md-4 col-4 card_data_ele">
+                    <div class="card_data_ele_top">45</div>
+                    <div class="card_data_ele_bottom">坚持天数</div>
+                  </div>
+                  <div class="col-md-4 col-4 card_data_ele">
+                    <div class="card_data_ele_top">10</div>
+                    <div class="card_data_ele_bottom">任务数量</div>
+                  </div>
+                </div>
+                <!-- row3 --> 
+                <div class="row no-gutters d-flex justify-content-center">
+                  <a role="button" class="col-8 btn btn-block btn-success myedit_project_btn" href="/index_subprojects/{{ row.pid }}/"> 项目详情</a>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+
+          <script>  
+            
+          </script>
+          <!-- 分页栏导航 -->
+          <div class="col-md-10" style="margin-top:10px;">             
+            <ul class="pagination pagination-sm col-md-2" style="float: right;">
+              <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+          </div>
+        </div>
+       
+      </div>
+    
+    </div>
+</body>
+
+<script src="/static/js/echarts.js"></script>
+<script src="/static/js/data_show/projects.js"></script>
+<script>
+  $('.delete_img_btn').click(function(){
+    var tds=$(this).parent().prevAll();
+    var pid = $(tds[0]).val();
+    console.log(tds)
+    console.log(pid)
+    $.ajax({
+      url:"/deleteproject/",
+      type:"POST",
+      data:{
+          "uid": $("#uid").val(),
+          "pid": pid,
+      },
+      success:function(arg){
+        console.log(arg);
+        arg = JSON.parse(arg);
+        if(arg.status){
+            // window.prompt("删除成功");
+            location.reload();
+        }
+        else{
+          $('#addError').text(arg.message)
+        }
+      }
+    })
+  });
+
+  $('.addp_confirm_btn').click(function(){
+    var uid = $('#addp_uid').val();
+    
+    var pname = $('#addp_pname').val();
+    console.log("addsub_confirm_btn",uid,pname)
+
+    $.ajax({
+      url:"/add_project/",
+      type:"POST",
+      data:{
+          "uid": uid,
+          'pname': pname,
+      },
+      success:function(arg){
+        console.log(arg);
+        arg = JSON.parse(arg);
+        if(arg.status){
+            console.log("成功",arg.message);
+            location.reload();
+        }
+        else{
+          console.log("失败",arg.message);
+          $('#addError').text(arg.message)
+        }
+      }
+    })
+  });
+  
+</script>
+
+</html>
+
