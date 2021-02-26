@@ -24,16 +24,18 @@
 	line-height: 40px;
 	cursor: pointer;
 }
-
+/* ,#login_container2,#regist_container2 */
 #login_container,#regist_container {
-	width: 360px;
+	/* width: 360px; */
+	width:100%;
 	text-align: center;
 	display: none;
 	margin-top: 30px;
 }
 
 #lab1 {
-	width: 330px;
+	/* width: 330px; */
+	width:100%;
 	border-bottom: 1px solid #000000;
 	text-align: left;
 	font-family: '微软雅黑';
@@ -98,11 +100,12 @@
 	width: 100px;
 	height: 40px;
 	border-radius: 0;
-	margin-top: 20px;
+	/* margin-top: 20px; */
 }
 /*注册按钮*/
 #regist_btn{
-	width: 330px;
+	/* width: 330px; */
+	width:100%;
 	height: 40px;
 	border-radius: 0;
 	margin-top: 20px;
@@ -111,33 +114,44 @@
 #rememberOrfindPwd {
 	display: inline-block;
 	height: 40px;
-	line-height: 70px;
-	margin-top: 15px;
-	float: right;
+	line-height: 40px;
+	padding:0;
+	/* margin-top: 15px; */
+	/* float: left; */
+}
+#rememberOrfindPwd div{
+	margin-top:0px;
+	display: inline;
+	height: 30px;
+	/* line-height: 100%; */
 }
 /*QQ登陆样式*/
 #login_QQ {
-	width: 150px;
+	/* width: 150px; */
+	width:48%;
 	height: 40px;
-	float: left;
+	/* float: left; */
 	border-radius: 0;
 }
 /*微博登陆样式*/
 #login_WB {
-	width: 150px;
+	/* width: 150px; */
+	width:48;
 	height: 40px;
-	float: right;
+	/* float: right; */
 	border-radius: 0;
 }
 /*登陆表单容器*/
 #form_container1 {
-	width: 330px;
-	height: 240px;
+	/* width: 330px; */
+	width:100%;
+	height: 260px;
 	border-bottom: 1px solid #FFFFFF;
 }
 /*注册表单容器*/
 #form_container2 {
-	width: 330px;
+	/* width: 330px; */
+	width:100%;
 	height: 300px;
 	border-bottom: 1px solid #FFFFFF;
 }

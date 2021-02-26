@@ -1,0 +1,36 @@
+#myNavBar *{
+	margin: 0 auto;
+}
+
+body{
+    background-color:rgb(239, 243, 245);
+}
+
+#myNavBar{
+    /* background-color: rgb(61, 129, 61); */
+    height:50px;
+    margin:0;
+}
+.mynav-show-item{
+    margin-right: 5px;
+    margin-left: 5px;
+    width:80px;
+    text-align: center;
+}
+.mynav-hide{
+    /* background-color: white; */
+    width: 100%;
+}
+#navbarSupportedContent .mynav-hide-item{
+    margin-right: 15px;
+    margin-left: 15px;
+    text-align: center;
+    /* color: black !important; */
+}
+
+#navbarSupportedContent .mynav-btn{
+    width:100px;
+    margin:10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}

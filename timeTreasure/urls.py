@@ -26,7 +26,7 @@ urlpatterns = [
     path(r'add_project/', views.add_project),
     path(r'deleteproject/', views.deleteproject),
 
-    path(r'index_subprojects/<int:pid>/', views.index_subprojects),
+    path(r'index_subprojects/<int:uid>/<int:pid>/', views.index_subprojects),
     path(r'add_subproject/', views.add_subproject),
     path(r'del_subproject/', views.del_subproject),
     path(r'add_record/', views.add_record),

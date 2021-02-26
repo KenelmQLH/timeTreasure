@@ -110,9 +110,8 @@ def deleteproject(request):
     return HttpResponse(json.dumps(ret))
 
 
-def index_subprojects(request,pid):
+def index_subprojects(request,uid,pid):
     if request.method == "GET":
-        # pid = request.GET.get("pid")
         print("in sub_index ~~~", pid, "~~~")
         results = Subprojects.objects.filter(projects_id=pid)
         subproject_list = []
@@ -135,6 +134,7 @@ def index_subprojects(request,pid):
         info = {
             'subproject_list': subproject_list,
             'pid': pid,
+            'uid':uid,
         }
         return render(request, 'index_subprojects.html', info)
     else:

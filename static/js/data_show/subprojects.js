@@ -4,18 +4,49 @@ var MonthBar2 = echarts.init(document.getElementById('month_bar2'));
 var optionMonthBar = {
     xAxis: {
         type: 'category',
-        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+        data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月'],
+        font: 6,
     },
     yAxis: {
+        splitLine:{
+            show:false
+        },
         type: 'value'
     },
     series: [{
         data: [120, 200, 150, 80, 70, 110, 130],
         type: 'bar',
-        showBackground: true,
-        backgroundStyle: {
-            color: 'rgba(180, 180, 180, 0.2)'
-        }
+        label: {
+            show: false,  
+        },
+        labelLine: {
+            show: false,
+        },
+        itemStyle: {
+            color: new echarts.graphic.LinearGradient(
+                0, 0, 0, 1,
+                [
+                    {offset: 0, color: '#ee4141'},
+                    
+                    { offset: 0.5, color: '#ec533e' },
+                    {offset: 1, color: '#ee2f16'}
+                ]
+            )
+        },
+        emphasis: {
+            itemStyle: {
+                color: new echarts.graphic.LinearGradient(
+                    0, 0, 0, 1,
+                    [
+                        {offset: 0, color: '#ec533e'},
+                        {offset: 0.7, color: '#ee2f16'},
+                        {offset: 1, color: '#ee2f16'}
+                    ]
+                )
+            }
+        },
+        showBackground: false,
+        
     }]
 };    
 MonthBar.setOption(optionMonthBar);
@@ -26,18 +57,49 @@ var WeekBar2 = echarts.init(document.getElementById('week_bar2'));
 var optionWeekBar = {
     xAxis: {
         type: 'category',
-        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+        data: ['周一', '周二', '周三', '周四', '周无', '周六', '周日'],
+        font: 6,
     },
     yAxis: {
+        splitLine:{
+            show:false
+        },
         type: 'value'
     },
     series: [{
-        data: [10, 5, 8, 7, 6, 9, 8],
+        data: [20, 20, 15, 8, 7, 11, 13],
         type: 'bar',
-        showBackground: true,
-        backgroundStyle: {
-            color: 'rgba(180, 180, 180, 0.2)'
-        }
+        label: {
+            show: false,  
+        },
+        labelLine: {
+            show: false,
+        },
+        itemStyle: {
+            color: new echarts.graphic.LinearGradient(
+                0, 0, 0, 1,
+                [
+                    {offset: 0, color: '#ee4141'},
+                    
+                    { offset: 0.5, color: '#ec533e' },
+                    {offset: 1, color: '#ee2f16'}
+                ]
+            )
+        },
+        emphasis: {
+            itemStyle: {
+                color: new echarts.graphic.LinearGradient(
+                    0, 0, 0, 1,
+                    [
+                        {offset: 0, color: '#ec533e'},
+                        {offset: 0.7, color: '#ee2f16'},
+                        {offset: 1, color: '#ee2f16'}
+                    ]
+                )
+            }
+        },
+        showBackground: false,
+        
     }]
 };    
 WeekBar.setOption(optionWeekBar);
@@ -48,20 +110,51 @@ var DayBar2 = echarts.init(document.getElementById('day_bar2'));
 var optionDayBar = {
     xAxis: {
         type: 'category',
-        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+        data: ['周一', '周二', '周三', '周四', '周无', '周六', '周日'],
+        font: 6,
     },
     yAxis: {
+        splitLine:{
+            show:false
+        },
         type: 'value'
     },
     series: [{
-        data: [120, 200, 150, 80, 70, 110, 130],
+        data: [12, 20, 15, 8, 7, 10, 10],
         type: 'bar',
-        showBackground: true,
-        backgroundStyle: {
-            color: 'rgba(180, 180, 180, 0.2)'
-        }
+        label: {
+            show: false,  
+        },
+        labelLine: {
+            show: false,
+        },
+        itemStyle: {
+            color: new echarts.graphic.LinearGradient(
+                0, 0, 0, 1,
+                [
+                    {offset: 0, color: '#ee4141'},
+                    
+                    { offset: 0.5, color: '#ec533e' },
+                    {offset: 1, color: '#ee2f16'}
+                ]
+            )
+        },
+        emphasis: {
+            itemStyle: {
+                color: new echarts.graphic.LinearGradient(
+                    0, 0, 0, 1,
+                    [
+                        {offset: 0, color: '#ec533e'},
+                        {offset: 0.7, color: '#ee2f16'},
+                        {offset: 1, color: '#ee2f16'}
+                    ]
+                )
+            }
+        },
+        showBackground: false,
+        
     }]
-};    
+};     
 DayBar.setOption(optionDayBar);
 DayBar2.setOption(optionDayBar);
 
